@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    # IMAGE_TAG permette il rollback immediato alla versione precedente.
+    image: gestione-corsi:${IMAGE_TAG:-latest}
+    container_name: gestione-corsi
+    restart: unless-stopped
+    ports:
+      # Per esporre solo su un'interfaccia LAN: APP_BIND=192.168.1.10
+      - "${APP_BIND:-0.0.0.0}:${APP_PORT:-3000}:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: file:/data/app.db
+      TZ: Europe/Rome
+    volumes:
+      # Il database vive fuori dal container: ricreare/aggiornare il container non lo tocca.
+      - ${DATA_DIR:-./data}:/data

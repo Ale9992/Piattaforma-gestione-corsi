@@ -1,0 +1,15 @@
+# Il tuo server, per gli script di deploy e backup.
+# Copia questo file in scripts/deploy.config (ignorato da git) e compilalo.
+
+# Utente e indirizzo del server Docker: obbligatorio.
+DEPLOY_HOST=utente@192.168.1.10
+
+# Cartella sul server dove vivono releases/, data/ e backups/.
+DEPLOY_DIR=/opt/gestione-corsi
+
+# Porta e interfaccia su cui pubblicare l'applicazione.
+DEPLOY_PORT=8081
+DEPLOY_BIND=0.0.0.0
+
+# Chiave SSH da usare per entrare.
+SSH_KEY="$HOME/.ssh/id_ed25519"

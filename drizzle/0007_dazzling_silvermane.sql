@@ -1,0 +1,1 @@
+ALTER TABLE `pre_lessons` ADD `status` text DEFAULT 'PLANNED' NOT NULL;

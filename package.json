@@ -1,0 +1,73 @@
+{
+  "name": "gestione-corsi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gestionale a utente singolo per formatori su incarico: calendarizzazione deterministica dei corsi, lettura degli incarichi dalla posta, disponibilità, compensi e sincronizzazione con Apple Calendar.",
+  "license": "MIT",
+  "author": "Alessio Baronti",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ale9992/Piattaforma-gestione-corsi.git"
+  },
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "drizzle-orm",
+    "sqlite",
+    "caldav",
+    "imap",
+    "scheduling"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node scripts/migrate.mjs",
+    "db:backup": "node scripts/backup.mjs",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build && npm run smoke",
+    "smoke": "if [ -f scripts/smoke.mjs ]; then node scripts/smoke.mjs; else echo 'Test di fumo non incluso in questa copia.'; fi",
+    "posta:accedi": "node scripts/posta-accedi.mjs"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.8.0",
+    "better-sqlite3": "^13.0.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.2",
+    "imapflow": "^2.0.5",
+    "lucide-react": "^1.46.0",
+    "mailparser": "^3.9.28",
+    "next": "16.3.5",
+    "next-themes": "^0.4.6",
+    "pdfjs-dist": "^6.3.289",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "shadcn": "^4.21.0",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0",
+    "tw-animate-css": "^1.4.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "9.6.0",
+    "@types/mailparser": "^3.4.6",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "0.31.10",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "playwright-core": "^1.63.0",
+    "tailwindcss": "^4",
+    "tsx": "4.23.13",
+    "typescript": "^5",
+    "vitest": "4.1.11"
+  }
+}
