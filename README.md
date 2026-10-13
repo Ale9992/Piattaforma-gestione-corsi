@@ -31,6 +31,29 @@ con backup del database prima di ogni rilascio e rollback automatico se la nuova
 > La suite di test non è pubblicata in questo repository: su una copia pulita `npm run test` e `npm run smoke`
 > non trovano nulla e il resto del controllo (typecheck, lint, build) gira come sempre.
 
+## Come si presenta
+
+Le immagini sono prese su un database di prova: corsi, aziende e allievi sono inventati.
+
+**Dashboard** — agenda dei prossimi giorni, ore della settimana, avanzamento dei corsi in corso e le mail che
+aspettano una conferma.
+
+![Dashboard](docs/immagini/dashboard.png)
+
+**Scheda del corso** — ore svolte contro monte ore, righe di calendarizzazione e tutte le lezioni, con le
+annullate che non contano e le ore recuperate in coda.
+
+![Scheda del corso](docs/immagini/corso.png)
+
+**Disponibilità** — il mese intero con le fasce davvero libere fra una lezione e l'altra, pronte da comunicare.
+
+![Disponibilità](docs/immagini/disponibilita.png)
+
+**Posta** — ogni mail diventa una proposta con scritto cosa succede se la confermi. Finché non confermi, il
+calendario non si muove.
+
+![Posta in arrivo](docs/immagini/posta.png)
+
 ## Indice
 
 - [Requisiti](#requisiti)

@@ -234,8 +234,7 @@ export default async function DashboardPage() {
             >
               <InboxIcon className="size-[18px] shrink-0 text-accent-ink" />
               <span className="min-w-0 flex-1 text-sm">
-                <strong className="font-medium">{postaInAttesa}</strong>{" "}
-                {plural(postaInAttesa, "mail da confermare", "mail da confermare")}
+                <strong className="font-medium">{postaInAttesa}</strong> mail da confermare
               </span>
               <span className="text-[13px] text-accent-ink">Apri</span>
             </Link>

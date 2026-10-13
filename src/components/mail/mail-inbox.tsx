@@ -130,7 +130,9 @@ function descriviProposta(mail: MailRow): { testo: string; azione: string | null
     ]
       .filter(Boolean)
       .join(" · ");
-    return { testo: `Corso nuovo: «${d.name || "senza titolo"}»${dettagli ? ` — ${dettagli}` : ""}.`, azione: null };
+    // Le ragioni sociali finiscono spesso con un punto ("S.R.L."): non se ne aggiunge un altro.
+    const frase = `Corso nuovo: «${d.name || "senza titolo"}»${dettagli ? ` — ${dettagli}` : ""}`;
+    return { testo: frase.endsWith(".") ? frase : `${frase}.`, azione: null };
   }
   if (p.kind === "ALTRO" && p.reason === "corso-non-trovato") {
     return {
