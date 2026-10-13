@@ -28,6 +28,9 @@ Costruito con **Next.js 16** (App Router, standalone), **React 19**, **TypeScrip
 **Drizzle ORM** su **SQLite**, **Vitest** e un test di fumo nel browser con Playwright. Deploy atomico su Docker
 con backup del database prima di ogni rilascio e rollback automatico se la nuova versione non risponde.
 
+> La suite di test non è pubblicata in questo repository: su una copia pulita `npm run test` e `npm run smoke`
+> non trovano nulla e il resto del controllo (typecheck, lint, build) gira come sempre.
+
 ## Indice
 
 - [Requisiti](#requisiti)
@@ -62,8 +65,8 @@ usa `npm run dev -- -H 0.0.0.0` e apri `http://<ip-del-mac>:3000`.
 | `npm run dev` | server di sviluppo |
 | `npm run typecheck` | controllo TypeScript |
 | `npm run lint` | ESLint |
-| `npm run test` | test automatici (Vitest) |
-| `npm run smoke` | avvia la build di produzione su un database usa e getta e ripercorre nel browser il percorso critico (serve Chrome o Chromium) |
+| `npm run test` | test automatici (Vitest; la suite non è inclusa in questo repository) |
+| `npm run smoke` | avvia la build di produzione su un database usa e getta e ripercorre nel browser il percorso critico (serve Chrome o Chromium; non incluso in questo repository) |
 | `npm run build` | build di produzione (output standalone) |
 | `npm run check` | typecheck + lint + test + build |
 | `npm run db:generate` | genera una nuova migration dopo una modifica a `src/db/schema.ts` |
